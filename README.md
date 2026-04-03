@@ -1,4 +1,4 @@
-# 🥗 NutriGuide: Personalized AI Diet Planner
+# 🥗 Diet Recommendation System
 
 NutriGuide is a diet planning system designed using HTML5 and CSS3 to provide structured meal recommendations based on user inputs and goals. The system helps promote healthier lifestyles by displaying customized diet plans for weight loss, weight gain, and maintenance.
 
