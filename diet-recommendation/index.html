@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Recommendation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="show-result" style="display:none;">
+    <div class="container">
+        <div class="input-section">
+            <h2 class="title">Diet Recommendation</h2>
+            <form>
+                <div class="form-group">
+                    <label>Age:</label>
+                    <input type="number" name="age" placeholder="Enter Age" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <select name="gender" placeholder="Select Gender" required>
+                        <option value="">Select Gender</option>
+                        <option>Female</option>
+                        <option>Male</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Height (cm):</label>
+                    <input type="number" name="height" placeholder="Enter Height" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Weight (kg):</label>
+                    <input type="number" name="weight" placeholder="Enter Weight" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Goal:</label>
+                    <div>
+                        <input type="radio" name="goal" value="Weight Loss" id="goal-loss" required><label for="goal-loss">Weight Loss</label>
+                        <input type="radio" name="goal" value="Weight Gain" id="goal-gain" required><label for="goal-gain">Weight Gain</label>
+                        <input type="radio" name="goal" value="Maintain" id="goal-maintain" required><label for="goal-maintain">Maintain</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Diet Preference:</label>
+                    <div>
+                        <input type="radio" name="diet" value="Non Veg" id="diet-nonveg" required><label for="diet-nonveg">Non Veg</label>
+                        <input type="radio" name="diet" value="Veg" id="diet-veg" required><label for="diet-veg">Veg</label>
+                    </div>
+                </div>
+
+                <label for="show-result" class="btn">Get Recommendation</label>            
+            </form>
+        </div>
+        <div class="result-section">
+            <h2 class="result-title">Recommendation Result</h2>
+            
+            <div class="output loss-nonveg">
+<pre>
+{
+  "Goal": "Weight Loss",
+  "Type": "Non-Veg",
+  "Day 1 Breakfast": "Egg Whites Omelette + Spinach",
+  "Day 1 Lunch": "Grilled Chicken Salad",
+  "Day 1 Dinner": "Baked Fish + Steamed Vegetables",
+  "Day 2 Breakfast": "Oats with Almonds",
+  "Day 2 Lunch": "Chicken Curry + 1 Roti",
+  "Day 2 Dinner": "Boiled Eggs + Veg Salad",
+  "Status": "Calorie Deficit"
+}
+</pre>
+            </div>
+
+            <div class="output loss-veg">
+<pre>
+{
+  "Goal": "Weight Loss",
+  "Type": "Veg",
+  "Day 1 Breakfast": "Oats with Almonds",
+  "Day 1 Lunch": "2 Roti + Dal + Sabzi + Salad",
+  "Day 1 Dinner": "Vegetable Soup + Paneer Salad",
+  "Day 2 Breakfast": "Poha with Vegetables",
+  "Day 2 Lunch": "Brown Rice + Rajma",
+  "Day 2 Dinner": "Grilled Paneer + Veggies",
+  "Status": "Calorie Deficit"
+}
+</pre>
+            </div>
+
+            <div class="output gain-nonveg">
+<pre>
+{
+  "Goal": "Weight Gain",
+  "Type": "Non-Veg",
+  "Day 1 Breakfast": "Omelette + Bread + Butter",
+  "Day 1 Lunch": "Chicken Curry + Rice",
+  "Day 1 Dinner": "Egg Curry + 3 Roti",
+  "Day 2 Breakfast": "Banana Milkshake + Boiled Eggs",
+  "Day 2 Lunch": "Mutton Curry + Rice",
+  "Day 2 Dinner": "Chicken Curry + Roti",
+  "Status": "Calorie Surplus"
+}
+</pre>
+            </div>
+
+            <div class="output gain-veg">
+<pre>
+{
+  "Goal": "Weight Gain",
+  "Type": "Veg",
+  "Day 1 Breakfast": "Paneer Paratha + Curd",
+  "Day 1 Lunch": "Rice + Dal + Sabzi + Ghee",
+  "Day 1 Dinner": "3 Roti + Paneer Curry",
+  "Day 2 Breakfast": "Banana Shake + Peanut Butter Toast",
+  "Day 2 Lunch": "Rajma Chawal + Salad",
+  "Day 2 Dinner": "Khichdi + Ghee",
+  "Status": "Calorie Surplus"
+}
+</pre>
+            </div>
+
+            <div class="output maintain-nonveg">
+<pre>
+{
+  "Goal": "Weight Maintenance",
+  "Type": "Non-Veg",
+  "Day 1 Breakfast": "Boiled Eggs + Toast",
+  "Day 1 Lunch": "Chicken Curry + 2 Roti",
+  "Day 1 Dinner": "Grilled Fish + Veggies",
+  "Day 2 Breakfast": "Oats + Milk",
+  "Day 2 Lunch": "Egg Curry + Rice",
+  "Day 2 Dinner": "Chicken Salad",
+  "Status": "Balanced Diet"
+}
+</pre>
+            </div>
+
+            <div class="output maintain-veg">
+<pre>
+{
+  "Goal": "Weight Maintenance",
+  "Type": "Veg",
+  "Day 1 Breakfast": "Idli + Sambar",
+  "Day 1 Lunch": "2 Roti + Dal + Sabzi + Salad",
+  "Day 1 Dinner": "Vegetable Khichdi",
+  "Day 2 Breakfast": "Upma + Coconut Chutney",
+  "Day 2 Lunch": "Brown Rice + Dal",
+  "Day 2 Dinner": "Paneer Salad",
+  "Status": "Balanced Diet"
+}
+</pre>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
